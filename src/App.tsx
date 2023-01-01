@@ -21,12 +21,14 @@ function App() {
   })));
   return (
     <div className="App">
+      <button onClick={() => gridRef.current!.api.exportDataAsCsv()}>Export</button>
+      {' '}contact (requests, etc): <a href="mailto:habs@sdf.org">habs@sdf.org</a>, discord sbah#1649
       <div className="ag-theme-alpine" style={{ width: '100%', height: '100vh' }}>
         <AgGridReact
           enableBrowserTooltips
           ref={gridRef}
           rowData={rowData}
-          defaultColDef={{ resizable: true, width: 70, tooltipValueGetter: ({ data, colDef }) => data[(colDef as ColDef).field!] }}
+          defaultColDef={{ resizable: true, width: 70, tooltipValueGetter: ({ data, colDef }) => data[(colDef as ColDef).field!], filter: true }}
           columnDefs={[{ field: 'item', pinned: 'left', width: 100 }, ...Object.keys(items).map((field) => ({ field }))]}
         />
       </div>

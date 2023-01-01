@@ -1,7 +1,7 @@
 {
   "name": "zeroone-island-crafts",
   "version": "0.1.0",
-  "homepage": "https://hpr.github.io/",
+  "homepage": "https://hpr.github.io/zeroone-island-crafts/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",

@@ -169,6 +169,9 @@ export const items: { [k in Item]: { [k in Item]?: Item | Item[] } } = {
     c_crab: 'f_crab_grilled',
     c_egg: 'f_omelette',
     c_leg_rabbit: 'f_rabbit_grilled',
+    c_fish: 'f_fish_grilled',
+    f_chicken: 'f_chicken_grilled',
+    f_shrimp: 'f_shrimp_grilled',
   },
   t_pickaxe: {
     r_rocks: ['c_stone_gold', 'c_stone_diamond', 'c_stone_iron'],
@@ -312,6 +315,7 @@ export const items: { [k in Item]: { [k in Item]?: Item | Item[] } } = {
   c_coconut: {
     t_axe: 'f_coconut_eatable',
     f_banana: 'f_banana_coconut',
+    t_knife: 'f_water_coconut',
   },
   c_coconut_opened: {},
   c_cod: {
@@ -328,12 +332,15 @@ export const items: { [k in Item]: { [k in Item]?: Item | Item[] } } = {
   c_cork: {
     c_jar: 'c_bottle',
   },
-  c_crab: {},
+  c_crab: {
+    t_pan_hot: 'f_crab_grilled',
+  },
   c_cracker_bat: {},
   c_cracker_monkey: {},
   c_cracker_turtle: {},
   c_cube_ice: {
     r_sun: 'f_water',
+    f_water_jar: 'f_drink_cold',
   },
   c_diamond: {
     c_ring_gold: 'u_bracelet_gold_diamond',
@@ -371,7 +378,10 @@ export const items: { [k in Item]: { [k in Item]?: Item | Item[] } } = {
     c_weaving: 'c_weaving_yellow',
     f_water_jar: 's_hair_blond',
   },
-  c_egg: {},
+  c_egg: {
+    t_knife: 'f_egg_broken',
+    t_pan_hot: 'f_omelette',
+  },
   c_electricity: {
     r_battery_empty: 'c_battery_charged',
     c_off_bulb: 'c_on_bulb',
@@ -405,6 +415,7 @@ export const items: { [k in Item]: { [k in Item]?: Item | Item[] } } = {
     f_water_jar: 'c_aquarius_blue',
     t_knife: 'c_bone_fish',
     c_box: 'c_box_fish',
+    c_smoke: 'f_salmon_smoked',
   },
   c_fishnet: {
     c_handle: 'c_net',
@@ -466,6 +477,8 @@ export const items: { [k in Item]: { [k in Item]?: Item | Item[] } } = {
     r_sand: 'c_hourglass',
     r_wire_electric: 'c_off_bulb',
     c_cork: 'c_bottle',
+    c_hive: 'f_honey',
+    f_water: 'f_water_jar',
   },
   c_jellyfish: {},
   c_key_blue: {},
@@ -523,7 +536,9 @@ export const items: { [k in Item]: { [k in Item]?: Item | Item[] } } = {
   c_leather_yellow_cut: {
     c_theard_needle: 'u_loincloth_leather_yellow',
   },
-  c_leg_rabbit: {},
+  c_leg_rabbit: {
+    t_pan_hot: 'f_rabbit_grilled',
+  },
   c_letter: {
     c_bottle: 'c_bottle_message',
   },
@@ -538,7 +553,9 @@ export const items: { [k in Item]: { [k in Item]?: Item | Item[] } } = {
     f_carrot: 'f_meat_carrot',
     f_mango: 'f_meat_mango',
     f_mushroom: 'f_meat_mushroom',
-    f_pineapple: 'f_meat_pineapple'
+    f_pineapple: 'f_meat_pineapple',
+    t_pan_hot: 'f_meat_grilled',
+    c_smoke: 'f_ham_smoked',
   },
   c_mold_nail: {
     c_iron_molten: 'c_nail',
@@ -573,7 +590,9 @@ export const items: { [k in Item]: { [k in Item]?: Item | Item[] } } = {
     c_electricity: 'c_on_bulb',
   },
   c_on_bulb: {},
-  c_oyster: {},
+  c_oyster: {
+    t_knife: 'f_oyster_open',
+  },
   c_pan: {
     x_campfire: 't_pan_hot',
   },
@@ -680,18 +699,24 @@ export const items: { [k in Item]: { [k in Item]?: Item | Item[] } } = {
     t_axe: 'c_shark_steak',
     t_knife: 'c_shark_teeth',
   },
-  c_shark_steak: {},
+  c_shark_steak: {
+    t_pan_hot: 'f_shark_steak_grilled',
+  },
   c_shark_teeth: {
     c_theard_needle: 'u_necklace_shark',
   },
-  c_shellfish: {},
+  c_shellfish: {
+    t_knife: 'f_shellfish_open',
+  },
   c_shoot: {
     f_water: ['c_flower', 'f_carrot', 'f_turnip'],
   },
   c_silkworm: {
     t_rod_fishing: 'c_rod_silkworm_fishing',
   },
-  c_skewer: {},
+  c_skewer: {
+    x_campfire: 'f_skewer_grilled',
+  },
   c_smoke: {
     c_fish: 'f_salmon_smoked',
     c_meat: 'f_ham_smoked',
@@ -809,7 +834,9 @@ export const items: { [k in Item]: { [k in Item]?: Item | Item[] } } = {
   c_tube: {
     p_powder_black: 'c_firefly',
   },
-  c_urchin_sea: {},
+  c_urchin_sea: {
+    t_knife: 'f_urchin_open',
+  },
   c_volleyball: {
     c_blood: 'c_wilson',
   },
@@ -831,6 +858,7 @@ export const items: { [k in Item]: { [k in Item]?: Item | Item[] } } = {
     c_weaving: 'c_bandage',
     c_rope: 'c_bag',
     c_theard_needle: 'u_loincloth_simple',
+    c_steam: 'f_water',
   },
   c_weaving_black: {
     c_theard_needle: 'u_loincloth_black',
@@ -876,11 +904,28 @@ export const items: { [k in Item]: { [k in Item]?: Item | Item[] } } = {
     c_coconut: 'f_banana_coconut',
     f_bottle_water: 'f_bottle_banana',
     c_bottle: 'f_bottle_banana',
+    c_meat: 'f_meat_banana',
+    f_chicken_grilled: 'f_chicken_banana',
+    f_crab_grilled: 'f_crab_banana',
+    f_fish_grilled: 'f_fish_banana',
+    f_mango: 'f_mango_banana',
+    f_pineapple: 'f_pineapple_banana',
+    f_rabbit_grilled: 'f_rabbit_banana',
+    f_shrimp_grilled: 'f_shrimp_banana',
+    f_tentacle_grilled: 'f_tentacle_banana',
   },
   f_banana_berry: {},
   f_banana_coconut: {},
   f_berry: {
     f_banana: 'f_banana_berry',
+    t_hammer: 'f_juice_berry',
+    c_meat: 'f_meat_berry',
+    f_chicken_grilled: 'f_chicken_berry',
+    f_coconut_eatable: 'f_coco_berry',
+    f_mango: 'f_mango_berry',
+    f_pineapple: 'f_pineapple_berry',
+    f_rabbit_grilled: 'f_rabbit_berry',
+    f_shrimp_grilled: 'f_shrimp_berry',
   },
   f_bottle_banana: {},
   f_bottle_berry: {},
@@ -892,6 +937,14 @@ export const items: { [k in Item]: { [k in Item]?: Item | Item[] } } = {
   },
   f_carrot: {
     c_bag: 'c_bag_carrots',
+    t_hammer: 'f_juice_carrot',
+    c_meat: 'f_meat_carrot',
+    f_chicken_grilled: 'f_chicken_carrot',
+    f_crab_grilled: 'f_crab_carrot',
+    f_fish_grilled: 'f_fish_carrot',
+    f_rabbit_grilled: 'f_rabbit_carrot',
+    f_shrimp_grilled: 'f_shrimp_carrot',
+    f_tentacle_grilled: 'f_tentacle_carrot',
   },
   f_chicken: {
     t_pan_hot: 'f_chicken_grilled',
@@ -922,7 +975,12 @@ export const items: { [k in Item]: { [k in Item]?: Item | Item[] } } = {
     f_mango: 'f_coco_mango',
     f_pineapple: 'f_coco_pineapple',
     f_salmon_smoked: 'f_coco_salmon',
-
+    f_chicken_grilled: 'f_chicken_coconut',
+    f_crab_grilled: 'f_crab_coconut',
+    f_fish_grilled: 'f_fish_coconut',
+    f_rabbit_grilled: 'f_rabbit_cononut',
+    f_shrimp_grilled: 'f_shrimp_coconut',
+    f_tentacle_grilled: 'f_tentacle_coconut',
   },
   f_cod_grilled: {},
   f_crab_banana: {},
@@ -936,10 +994,16 @@ export const items: { [k in Item]: { [k in Item]?: Item | Item[] } } = {
   },
   f_crab_mushroom: {},
   f_drink_cold: {},
-  f_egg_broken: {},
-  f_egg_cooked: {},
+  f_egg_broken: {
+    t_pan_hot: 'f_egg_cooked',
+  },
+  f_egg_cooked: {
+    f_eggs_fish: 'f_eggs_mimosa_fish',
+    f_shrimp_grilled: 'f_shrimp_mimosa',
+  },
   f_eggs_fish: {
     f_egg_cooked: 'f_eggs_mimosa_fish',
+    f_sheet_seaweed: 'f_eggs_maki',
   },
   f_eggs_maki: {},
   f_eggs_mimosa_fish: {},
@@ -956,7 +1020,6 @@ export const items: { [k in Item]: { [k in Item]?: Item | Item[] } } = {
     f_carrot: 'f_fish_carrot',
     f_mushroom: 'f_fish_mushroom',
     f_coconut_eatable: 'f_fish_coconut',
-
   },
   f_fish_maki: {},
   f_fish_mushroom: {},
@@ -981,7 +1044,12 @@ export const items: { [k in Item]: { [k in Item]?: Item | Item[] } } = {
     f_banana: 'f_mango_banana',
     f_berry: 'f_mango_berry',
     f_pineapple: 'f_mango_pineapple',
-
+    t_hammer: 'f_juice_mango',
+    c_meat: 'f_meat_mango',
+    f_chicken_grilled: 'f_chicken_mango',
+    f_coconut_eatable: 'f_coco_mango',
+    f_rabbit_grilled: 'f_rabbit_mango',
+    f_shrimp_grilled: 'f_shrimp_mango',
   },
   f_mango_banana: {},
   f_mango_berry: {},
@@ -993,7 +1061,16 @@ export const items: { [k in Item]: { [k in Item]?: Item | Item[] } } = {
   f_meat_mango: {},
   f_meat_mushroom: {},
   f_meat_pineapple: {},
-  f_mushroom: {},
+  f_mushroom: {
+    c_meat: 'f_meat_mushroom',
+    f_chicken_grilled: 'f_chicken_mushroom',
+    f_crab_grilled: 'f_crab_mushroom',
+    f_fish_grilled: 'f_fish_mushroom',
+    f_omelette: 'f_omelette_mushroom',
+    f_rabbit_grilled: 'f_rabbit_mushroom',
+    f_shrimp_grilled: 'f_shrimp_mushroom',
+    f_tentacle_grilled: 'f_tentacle_mushroom',
+  },
   f_omelette: {
     f_mushroom: 'f_omelette_mushroom',
   },
@@ -1003,6 +1080,12 @@ export const items: { [k in Item]: { [k in Item]?: Item | Item[] } } = {
     f_banana: 'f_pineapple_banana',
     f_berry: 'f_pineapple_berry',
     f_rabbit_grilled: 'f_rabbit_pineapple',
+    t_hammer: 'f_juice_pinapple',
+    c_meat: 'f_meat_pineapple',
+    f_chicken_grilled: 'f_chicken_pineapple',
+    f_coconut_eatable: 'f_coco_pineapple',
+    f_mango: 'f_mango_pineapple',
+    f_shrimp_grilled: 'f_shrimp_pineapple',
   },
   f_pineapple_banana: {},
   f_pineapple_berry: {},
@@ -1023,14 +1106,20 @@ export const items: { [k in Item]: { [k in Item]?: Item | Item[] } } = {
   f_rabbit_mushroom: {},
   f_rabbit_pineapple: {},
   f_salmon_maki: {},
-  f_salmon_smoked: {},
+  f_salmon_smoked: {
+    f_coconut_eatable: 'f_coco_salmon',
+    f_sheet_seaweed: 'f_salmon_maki',
+  },
   f_shark_steak_grilled: {},
   f_sheet_seaweed: {
     f_salmon_smoked: 'f_salmon_maki',
     f_eggs_fish: 'f_eggs_maki',
+    c_fish: 'f_fish_maki',
   },
   f_shellfish_grilled: {},
-  f_shellfish_open: {},
+  f_shellfish_open: {
+    t_pan_hot: 'f_shellfish_grilled',
+  },
   f_shrimp: {
     t_pan_hot: 'f_shrimp_grilled',
   },
@@ -1054,7 +1143,9 @@ export const items: { [k in Item]: { [k in Item]?: Item | Item[] } } = {
   f_shrimp_pineapple: {},
   f_skewer_grilled: {},
   f_sugar: {},
-  f_tentacle: {},
+  f_tentacle: {
+    x_campfire: 'f_tentacle_grilled',
+  },
   f_tentacle_banana: {},
   f_tentacle_carrot: {},
   f_tentacle_coconut: {},
@@ -1063,7 +1154,6 @@ export const items: { [k in Item]: { [k in Item]?: Item | Item[] } } = {
     f_carrot: 'f_tentacle_carrot',
     f_coconut_eatable: 'f_tentacle_coconut',
     f_mushroom: 'f_tentacle_mushroom',
-
   },
   f_tentacle_mushroom: {},
   f_turnip: {},
@@ -1272,7 +1362,8 @@ export const items: { [k in Item]: { [k in Item]?: Item | Item[] } } = {
     c_pan: 't_pan_hot',
     c_wall_brick: 'x_oven_brick',
     c_wall_cob: 'x_oven',
-    c_skewer: 'f_skewer_grilled'
+    c_skewer: 'f_skewer_grilled',
+    c_cod: 'f_cod_grilled',
   },
   x_dyg: {},
   x_frame: {},
