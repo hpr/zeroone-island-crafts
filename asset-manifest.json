@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/zeroone-island-crafts/static/css/main.983f2992.css",
-    "main.js": "/zeroone-island-crafts/static/js/main.d771d124.js",
+    "main.js": "/zeroone-island-crafts/static/js/main.4e574e76.js",
     "static/js/787.e6d816a8.chunk.js": "/zeroone-island-crafts/static/js/787.e6d816a8.chunk.js",
     "index.html": "/zeroone-island-crafts/index.html",
     "main.983f2992.css.map": "/zeroone-island-crafts/static/css/main.983f2992.css.map",
-    "main.d771d124.js.map": "/zeroone-island-crafts/static/js/main.d771d124.js.map",
+    "main.4e574e76.js.map": "/zeroone-island-crafts/static/js/main.4e574e76.js.map",
     "787.e6d816a8.chunk.js.map": "/zeroone-island-crafts/static/js/787.e6d816a8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.983f2992.css",
-    "static/js/main.d771d124.js"
+    "static/js/main.4e574e76.js"
   ]
 }
