@@ -28,6 +28,7 @@ function App() {
       <div className="ag-theme-alpine" style={{ width: '100%', height: '100vh' }}>
         <AgGridReact
           enableBrowserTooltips
+          columnHoverHighlight
           ref={gridRef}
           rowData={rowData}
           defaultColDef={{
@@ -35,20 +36,18 @@ function App() {
             width: 40,
             tooltipValueGetter: ({ data, colDef }) => data[(colDef as ColDef).field!],
             filter: true,
-            cellRenderer: ({ value }: { value: string | string[] }) =>
-              value ? (
-                Array.isArray(value) ? (
-                  <>
-                    {value.map((v) => (
-                      <img key={v} height={20} width={20} src={`assets/${v}.png`} />
-                    ))}
-                  </>
-                ) : (
-                  <img height={20} width={20} src={`assets/${value}.png`} />
-                )
-              ) : null,
+            cellRenderer: ({ value }: { value: string | string[] }) => {
+              const items = value ? (Array.isArray(value) ? value : [value]) : [];
+              return (
+                <>
+                  {items.map((v) => (
+                    <img key={v} height={20} width={20} src={`assets/${v}.png`} />
+                  ))}
+                </>
+              );
+            },
             headerComponent: (props: IHeaderParams) =>
-              props.column.getColId() === 'item' ? props.displayName : <img height={20} width={20} src={`assets/${props.column.getColId()}.png`} />,
+              props.column.getColId() === 'item' ? props.displayName : <img title={props.column.getColId()} height={20} width={20} src={`assets/${props.column.getColId()}.png`} />,
             sortable: true,
           }}
           columnDefs={[{ field: 'item', pinned: 'left' }, ...Object.keys(items).map((field) => ({ field }))]}
